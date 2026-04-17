@@ -21,6 +21,7 @@ struct DinoRunnerApp: App {
         }
     }
 }
+
 struct BannerAdView: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> UIViewController {
         let viewController = UIViewController()
