@@ -11,7 +11,7 @@ struct DinoRunnerApp: App {
     var body: some Scene {
         WindowGroup {
             VStack(spacing: 0) {
-                ContentView()
+                StartView()
                     .preferredColorScheme(nil)
                 
                 BannerAdView()
