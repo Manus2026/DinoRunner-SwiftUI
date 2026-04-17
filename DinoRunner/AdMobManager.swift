@@ -1,41 +1,44 @@
 import GoogleMobileAds
 import SwiftUI
 
-class AdMobManager: NSObject, GADBannerViewDelegate {
+class AdMobManager: NSObject, BannerViewDelegate {
     static let shared = AdMobManager()
     
-    var bannerView: GADBannerView?
+    var bannerView: BannerView?
     
     override init() {
         super.init()
     }
     
     func initializeAdMob() {
-        GADMobileAds.sharedInstance().start(completionHandler: nil)
+        // 最新版 SDK 語法：MobileAds.sharedInstance().start
+        MobileAds.shared.start(completionHandler: nil)
     }
     
     func loadBannerAd(in viewController: UIViewController) {
-        let bannerView = GADBannerView(adSize: GADAdSizeBanner)
+        // 最新版 SDK 語法：GADBannerView(adSize: GADAdSizeBanner)
+        let bannerView = BannerView(adSize: AdSizeBanner)
         bannerView.adUnitID = "ca-app-pub-2331479066428545/7604889398"
         bannerView.rootViewController = viewController
         bannerView.delegate = self
         
-        let request = GADRequest()
+        // 最新版 SDK 語法：GADRequest()
+        let request = Request()
         bannerView.load(request)
         
         self.bannerView = bannerView
     }
     
-    func getBannerView() -> GADBannerView? {
+    func getBannerView() -> BannerView? {
         return bannerView
     }
     
     // MARK: - GADBannerViewDelegate
-    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
+    func bannerViewDidReceiveAd(_ bannerView: BannerView) {
         print("AdMob: Banner ad received")
     }
     
-    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
+    func bannerView(_ bannerView: BannerView, didFailToReceiveAdWithError error: Error) {
         print("AdMob: Failed to receive banner ad - \(error.localizedDescription)")
     }
 }

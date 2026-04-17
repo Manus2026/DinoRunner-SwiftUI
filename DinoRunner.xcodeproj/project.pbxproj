@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		840488342F90EB23001A0D30 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 840488332F90EB23001A0D30 /* GoogleMobileAds */; };
 		B001000100000001 /* DinoRunnerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001000100000001 /* DinoRunnerApp.swift */; };
 		B001000200000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001000200000002 /* ContentView.swift */; };
 		B001000300000003 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001000300000003 /* GameView.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		840488352F91C1AC001A0D30 /* DinoRunner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DinoRunner.entitlements; sourceTree = "<group>"; };
 		A001000100000001 /* DinoRunnerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinoRunnerApp.swift; sourceTree = "<group>"; };
 		A001000200000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A001000300000003 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
@@ -45,16 +47,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				840488342F90EB23001A0D30 /* GoogleMobileAds in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		840488322F90EB23001A0D30 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E001000100000001 = {
 			isa = PBXGroup;
 			children = (
 				E001000200000002 /* DinoRunner */,
+				840488322F90EB23001A0D30 /* Frameworks */,
 				E001000300000003 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,6 +73,7 @@
 		E001000200000002 /* DinoRunner */ = {
 			isa = PBXGroup;
 			children = (
+				840488352F91C1AC001A0D30 /* DinoRunner.entitlements */,
 				A001000100000001 /* DinoRunnerApp.swift */,
 				A001000200000002 /* ContentView.swift */,
 				A001000300000003 /* GameView.swift */,
@@ -104,6 +116,9 @@
 			dependencies = (
 			);
 			name = DinoRunner;
+			packageProductDependencies = (
+				840488332F90EB23001A0D30 /* GoogleMobileAds */,
+			);
 			productName = DinoRunner;
 			productReference = C001000100000001 /* DinoRunner.app */;
 			productType = "com.apple.product-type.application";
@@ -132,6 +147,9 @@
 				Base,
 			);
 			mainGroup = E001000100000001;
+			packageReferences = (
+				840488312F90E922001A0D30 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
 			productRefGroup = E001000300000003 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -295,17 +313,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DinoRunner/DinoRunner.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = Q6MNQPE7DY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DinoRunner/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = DinoRun;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.kids-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
-				INFOPLIST_FILE = DinoRunner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -324,17 +346,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DinoRunner/DinoRunner.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = Q6MNQPE7DY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DinoRunner/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = DinoRun;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.kids-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
-				INFOPLIST_FILE = DinoRunner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -351,15 +377,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F001000400000004 /* Build configuration list for PBXProject "DinoRunner" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F001000500000005 /* Debug */,
-				F001000600000006 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		F001000200000002 /* Build configuration list for PBXNativeTarget "DinoRunner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -369,8 +386,35 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		F001000400000004 /* Build configuration list for PBXProject "DinoRunner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F001000500000005 /* Debug */,
+				F001000600000006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		840488312F90E922001A0D30 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 13.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		840488332F90EB23001A0D30 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 840488312F90E922001A0D30 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F001000300000003 /* Project object */;
 }

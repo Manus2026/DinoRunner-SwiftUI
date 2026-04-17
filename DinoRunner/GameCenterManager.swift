@@ -30,11 +30,13 @@ class GameCenterManager: NSObject, GKGameCenterControllerDelegate {
             print("Player not authenticated for Game Center")
             return
         }
-        
-        let scoreSubmission = GKScore(leaderboardID: leaderboardID)
-        scoreSubmission.value = Int64(score)
-        
-        GKScore.report([scoreSubmission]) { error in
+
+        GKLeaderboard.submitScore(
+            score,
+            context: 0,
+            player: GKLocalPlayer.local,
+            leaderboardIDs: [leaderboardID]
+        ) { error in
             if let error = error {
                 print("Error submitting score to Game Center: \(error.localizedDescription)")
             } else {

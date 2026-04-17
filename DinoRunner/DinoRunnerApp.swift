@@ -4,7 +4,8 @@ import GoogleMobileAds
 @main
 struct DinoRunnerApp: App {
     init() {
-        GADMobileAds.sharedInstance().start(completionHandler: nil)
+        // 在最新版 SDK 中，start 方法的 completionHandler 是可選的，但需要明確指定類型或傳入 nil
+        MobileAds.shared.start(completionHandler: nil)
     }
     
     var body: some Scene {
@@ -20,22 +21,27 @@ struct DinoRunnerApp: App {
         }
     }
 }
-
 struct BannerAdView: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> UIViewController {
         let viewController = UIViewController()
-        let bannerView = GADBannerView(adSize: GADAdSizeBanner)
         
-        // 使用使用者提供的廣告單元 ID
+        let bannerView = BannerView(adSize: AdSizeBanner)
         bannerView.adUnitID = "ca-app-pub-2331479066428545/7604889398"
         bannerView.rootViewController = viewController
+        
         viewController.view.addSubview(bannerView)
         
-        let request = GADRequest()
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            bannerView.centerXAnchor.constraint(equalTo: viewController.view.centerXAnchor),
+            bannerView.bottomAnchor.constraint(equalTo: viewController.view.bottomAnchor)
+        ])
+        
+        let request = Request()
         bannerView.load(request)
         
         return viewController
     }
-    
+
     func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
 }
