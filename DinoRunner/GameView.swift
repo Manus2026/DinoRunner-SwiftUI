@@ -14,6 +14,13 @@ struct GameView: View {
             ZStack {
                 bgColor.ignoresSafeArea()
 
+                // Sun
+                Image("sun")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 80, height: 80)
+                    .position(x: geo.size.width - 60, y: 60)
+
                 // Clouds
                 ForEach(vm.clouds) { cloud in
                     Image(systemName: "cloud.fill")
@@ -52,6 +59,7 @@ struct GameView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: obs.width, height: obs.height)
+                        .scaleEffect(x: obs.type == .bird ? -1 : 1, y: 1) // 修正翼龍方向
                         .position(x: obs.x + obs.width/2, y: geo.size.height - GameConstants.groundY - obs.y - obs.height/2)
                 }
 
