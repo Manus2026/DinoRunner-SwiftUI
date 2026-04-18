@@ -6,13 +6,34 @@ struct GameView: View {
     @Environment(\.colorScheme) var colorScheme
     @State private var showGameCenter = false
 
-    var bgColor: Color { colorScheme == .dark ? Color(red: 0.1, green: 0.1, blue: 0.12) : Color(red: 0.95, green: 0.95, blue: 0.98) }
-    var fgColor: Color { colorScheme == .dark ? .white : .black }
+    var bgColor: Color {
+        if vm.score >= 10000 {
+            return Color(red: 0.2, green: 0.0, blue: 0.3) // 霓虹紫 (10,000+)
+        } else if vm.score >= 5000 {
+            return Color(red: 0.05, green: 0.05, blue: 0.15) // 午夜藍 (5,000+)
+        } else if vm.score >= 1000 {
+            return Color(red: 0.3, green: 0.1, blue: 0.1) // 黃昏紅 (1,000+)
+        }
+        return Color(red: 0.1, green: 0.1, blue: 0.12) // 預設深色
+    }
+    var fgColor: Color { .white }
 
     var body: some View {
         GeometryReader { geo in
             ZStack {
-                bgColor.ignoresSafeArea()
+                bgColor
+                    .animation(.easeInOut(duration: 2.0), value: vm.score / 1000) // 背景顏色過渡
+                    .ignoresSafeArea()
+                
+                // 星星效果 (僅在 5000 分以上顯示)
+                if vm.score >= 5000 {
+                    ForEach(0..<20, id: \.self) { i in
+                        Circle()
+                            .fill(Color.white.opacity(Double.random(in: 0.3...0.8)))
+                            .frame(width: 2, height: 2)
+                            .position(x: CGFloat((i * 137) % Int(geo.size.width)), y: CGFloat((i * 251) % 300))
+                    }
+                }
 
                 // Sun
                 Image("sun")
@@ -60,6 +81,7 @@ struct GameView: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width: obs.width, height: obs.height)
                         .scaleEffect(x: obs.type == .bird ? -1 : 1, y: 1) // 修正翼龍方向
+                        .shadow(color: vm.score >= 10000 ? .cyan : .clear, radius: 10) // 霓虹發光
                         .position(x: obs.x + obs.width/2, y: geo.size.height - GameConstants.groundY - obs.y - obs.height/2)
                 }
 
@@ -69,7 +91,7 @@ struct GameView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: vm.isDucking ? 64 : 50, height: vm.isDucking ? 30 : 54)
-                    .scaleEffect(x: 1, y: 1)
+                    .shadow(color: vm.score >= 10000 ? .cyan : .clear, radius: 10) // 霓虹發光
                     .position(x: vm.dinoScreenCenterX(), y: vm.dinoScreenCenterY())
 
                 // HUD
