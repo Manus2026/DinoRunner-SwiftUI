@@ -19,8 +19,8 @@
 		B001000900000009 /* GameModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001000900000009 /* GameModels.swift */; };
 		B001001000000010 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001001000000010 /* ScoreView.swift */; };
 		B001001100000011 /* AdMobManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001001100000011 /* AdMobManager.swift */; };
-			B001001200000012 /* GameCenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001001200000012 /* GameCenterManager.swift */; };
-			B001001400000014 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001001400000014 /* StartView.swift */; };
+		B001001200000012 /* GameCenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001001200000012 /* GameCenterManager.swift */; };
+		B001001400000014 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001001400000014 /* StartView.swift */; };
 		B002000100000001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A002000100000001 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -37,9 +37,9 @@
 		A001000900000009 /* GameModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModels.swift; sourceTree = "<group>"; };
 		A001001000000010 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		A001001100000011 /* AdMobManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobManager.swift; sourceTree = "<group>"; };
-			A001001200000012 /* GameCenterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenterManager.swift; sourceTree = "<group>"; };
-			A001001400000014 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		A001001200000012 /* GameCenterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenterManager.swift; sourceTree = "<group>"; };
 		A001001300000013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A001001400000014 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		A002000100000001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C001000100000001 /* DinoRunner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DinoRunner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -87,8 +87,8 @@
 				A001000900000009 /* GameModels.swift */,
 				A001001000000010 /* ScoreView.swift */,
 				A001001100000011 /* AdMobManager.swift */,
-					A001001200000012 /* GameCenterManager.swift */,
-					A001001400000014 /* StartView.swift */,
+				A001001200000012 /* GameCenterManager.swift */,
+				A001001400000014 /* StartView.swift */,
 				A001001300000013 /* Info.plist */,
 				A002000100000001 /* Assets.xcassets */,
 			);
@@ -189,8 +189,8 @@
 				B001000900000009 /* GameModels.swift in Sources */,
 				B001001000000010 /* ScoreView.swift in Sources */,
 				B001001100000011 /* AdMobManager.swift in Sources */,
-					B001001200000012 /* GameCenterManager.swift in Sources */,
-					B001001400000014 /* StartView.swift in Sources */,
+				B001001200000012 /* GameCenterManager.swift in Sources */,
+				B001001400000014 /* StartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,7 +319,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = DinoRunner/DinoRunner.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = Q6MNQPE7DY;
 				ENABLE_PREVIEWS = YES;
@@ -330,8 +330,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -339,9 +339,11 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dinorunner.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -352,7 +354,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = DinoRunner/DinoRunner.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = Q6MNQPE7DY;
 				ENABLE_PREVIEWS = YES;
@@ -363,8 +365,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -372,9 +374,11 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dinorunner.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
