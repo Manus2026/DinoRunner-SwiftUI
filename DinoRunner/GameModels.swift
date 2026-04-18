@@ -64,7 +64,7 @@ struct GroundSegment: Identifiable {
 
 // MARK: - Game Constants
 struct GameConstants {
-    static let groundY: CGFloat = 100         // 地面距底部高度 (增加高度以貼合視覺)
+    static let groundY: CGFloat = 110         // 地面距底部高度 (進一步增加高度以消除間隙)
     static let dinoWidth: CGFloat = 50
     static let dinoHeight: CGFloat = 54
     static let dinoX: CGFloat = 80            // 恐龍固定 X 位置
