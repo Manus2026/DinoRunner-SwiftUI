@@ -170,8 +170,14 @@ class GameViewModel: ObservableObject {
         let x = screenWidth + 30
         let type: ObstacleType = (currentSpeed > 400 && Bool.random()) ? .bird : .cactusSmall
         switch type {
-        case .cactusSmall: obstacles.append(Obstacle(x: x, y: 0, width: 35, height: 50, type: .cactusSmall))
-        case .bird: obstacles.append(Obstacle(x: x, y: 60, width: 45, height: 35, type: .bird))
+        case .cactusSmall: 
+            obstacles.append(Obstacle(x: x, y: 0, width: 35, height: 50, type: .cactusSmall))
+        case .bird: 
+            // 隨機生成兩種高度：
+            // 1. 低位 (y: 20)：需要跳躍避開
+            // 2. 高位 (y: 75)：需要蹲下避開
+            let birdY: CGFloat = Bool.random() ? 20 : 75
+            obstacles.append(Obstacle(x: x, y: birdY, width: 45, height: 35, type: .bird))
         default: break
         }
     }
