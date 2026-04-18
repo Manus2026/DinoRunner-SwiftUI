@@ -176,7 +176,8 @@ struct GameView: View {
                     }
                 }
                 
-                // 測試按鈕 (置於最頂層，確保可點擊)
+                // 測試按鈕 (置於最頂層，僅在 DEBUG 模式下顯示)
+                #if DEBUG
                 if vm.gameState == .running {
                     VStack {
                         HStack {
@@ -195,6 +196,7 @@ struct GameView: View {
                         Spacer()
                     }
                 }
+                #endif
             }
             .onAppear { 
                 vm.setup(screenWidth: geo.size.width, screenHeight: geo.size.height)
