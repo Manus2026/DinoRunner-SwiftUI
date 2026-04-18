@@ -12,6 +12,7 @@ struct DinoRunnerApp: App {
         WindowGroup {
             VStack(spacing: 0) {
                 StartView()
+                    .preferredColorScheme(.dark)
                 
                 BannerAdView()
                     .frame(height: 50)
