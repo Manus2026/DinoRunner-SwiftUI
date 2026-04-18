@@ -19,7 +19,7 @@ struct GameView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 80, height: 80)
-                    .position(x: 60, y: 60)
+                    .position(x: 60, y: 160)
 
                 // Clouds
                 ForEach(vm.clouds) { cloud in
