@@ -181,17 +181,7 @@ class GameViewModel: ObservableObject {
         checkCollisions()
     }
 
-    private func updateDinoPhysics(dt: CGFloat) {
-        if !isOnGround {
-            dinoVelocityY += GameConstants.gravity * dt
-            dinoYOffset += dinoVelocityY * dt
-            if dinoYOffset <= 0 {
-                dinoYOffset = 0
-                dinoVelocityY = 0
-                isOnGround = true
-            }
-        }
-    }
+
 
     private func updateObstacles(dt: CGFloat) {
         for i in obstacles.indices { obstacles[i].x -= currentSpeed * dt }
