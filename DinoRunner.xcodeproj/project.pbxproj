@@ -88,7 +88,6 @@
 				A001001000000010 /* ScoreView.swift */,
 				A001001100000011 /* AdMobManager.swift */,
 				A001001200000012 /* GameCenterManager.swift */,
-				A001001400000014 /* StartView.swift */,
 				A001001300000013 /* Info.plist */,
 				A002000100000001 /* Assets.xcassets */,
 			);
@@ -190,7 +189,6 @@
 				B001001000000010 /* ScoreView.swift in Sources */,
 				B001001100000011 /* AdMobManager.swift in Sources */,
 				B001001200000012 /* GameCenterManager.swift in Sources */,
-				B001001400000014 /* StartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
