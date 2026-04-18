@@ -41,6 +41,18 @@ struct GameView: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 80, height: 80)
                     .position(x: 60, y: 160)
+                
+                // 測試按鈕 (點擊增加 1,000 分)
+                if vm.gameState == .running {
+                    Button(action: { vm.score += 1000 }) {
+                        Text("DEBUG: +1000")
+                            .font(.system(size: 10, weight: .bold, design: .monospaced))
+                            .padding(6)
+                            .background(Color.red.opacity(0.3))
+                            .cornerRadius(4)
+                    }
+                    .position(x: 60, y: 120)
+                }
 
                 // Clouds
                 ForEach(vm.clouds) { cloud in
