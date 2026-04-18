@@ -19,7 +19,8 @@
 		B001000900000009 /* GameModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001000900000009 /* GameModels.swift */; };
 		B001001000000010 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001001000000010 /* ScoreView.swift */; };
 		B001001100000011 /* AdMobManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001001100000011 /* AdMobManager.swift */; };
-		B001001200000012 /* GameCenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001001200000012 /* GameCenterManager.swift */; };
+			B001001200000012 /* GameCenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001001200000012 /* GameCenterManager.swift */; };
+			B001001400000014 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001001400000014 /* StartView.swift */; };
 		B002000100000001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A002000100000001 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +37,8 @@
 		A001000900000009 /* GameModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModels.swift; sourceTree = "<group>"; };
 		A001001000000010 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		A001001100000011 /* AdMobManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobManager.swift; sourceTree = "<group>"; };
-		A001001200000012 /* GameCenterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenterManager.swift; sourceTree = "<group>"; };
+			A001001200000012 /* GameCenterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenterManager.swift; sourceTree = "<group>"; };
+			A001001400000014 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		A001001300000013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A002000100000001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C001000100000001 /* DinoRunner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DinoRunner.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,7 +87,8 @@
 				A001000900000009 /* GameModels.swift */,
 				A001001000000010 /* ScoreView.swift */,
 				A001001100000011 /* AdMobManager.swift */,
-				A001001200000012 /* GameCenterManager.swift */,
+					A001001200000012 /* GameCenterManager.swift */,
+					A001001400000014 /* StartView.swift */,
 				A001001300000013 /* Info.plist */,
 				A002000100000001 /* Assets.xcassets */,
 			);
@@ -186,7 +189,8 @@
 				B001000900000009 /* GameModels.swift in Sources */,
 				B001001000000010 /* ScoreView.swift in Sources */,
 				B001001100000011 /* AdMobManager.swift in Sources */,
-				B001001200000012 /* GameCenterManager.swift in Sources */,
+					B001001200000012 /* GameCenterManager.swift in Sources */,
+					B001001400000014 /* StartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
