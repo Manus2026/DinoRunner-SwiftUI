@@ -139,14 +139,18 @@ struct GameView: View {
                         // Right side for jumping
                         Color.clear
                             .contentShape(Rectangle())
-                            .onTapGesture { vm.jump() }
+                            .gesture(
+                                DragGesture(minimumDistance: 0)
+                                    .onChanged { _ in if !vm.isJumping { vm.handlePress(active: true) } }
+                                    .onEnded { _ in vm.handlePress(active: false) }
+                            )
                     }
                 }
 
                 if vm.gameState == .idle {
                     VStack(spacing: 20) {
                         Text("DINO ADVENTURE").font(.system(size: 32, weight: .black, design: .monospaced))
-                        Text("TAP RIGHT TO JUMP\nTAP LEFT TO SHOOT").multilineTextAlignment(.center).font(.system(size: 14, design: .monospaced))
+                        Text("HOLD RIGHT TO JUMP HIGHER\nTAP LEFT TO SHOOT").multilineTextAlignment(.center).font(.system(size: 14, design: .monospaced))
                         Text("TAP TO START").font(.system(size: 18, weight: .bold, design: .monospaced)).foregroundColor(.cyan)
                     }
                     .onTapGesture { vm.startGame() }

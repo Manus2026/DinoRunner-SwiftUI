@@ -18,6 +18,8 @@ class GameViewModel: ObservableObject {
     @Published var currentSpeed: CGFloat = GameConstants.initialSpeed
     @Published var isOnGround: Bool = true
     @Published var isDucking: Bool = false
+    @Published var isJumping: Bool = false
+    @Published var jumpStartTime: Date? = nil
     @Published var dinoAnimFrame: Int = 0
     @Published var groundOffset: CGFloat = 0
     @Published var scoreFlash: Bool = false
@@ -75,18 +77,54 @@ class GameViewModel: ObservableObject {
         startDisplayLink()
     }
 
-    func handleTap() {
+    func handlePress(active: Bool) {
         switch gameState {
-        case .idle, .gameOver: startGame()
-        case .running: jump()
+        case .idle, .gameOver: 
+            if active { startGame() }
+        case .running:
+            if active {
+                startJump()
+            } else {
+                endJump()
+            }
         }
     }
 
-    func jump() {
-        guard gameState == .running, isOnGround else { return }
-        dinoVelocityY = GameConstants.jumpVelocity
+    private func startJump() {
+        guard isOnGround && !isDucking else { return }
+        isJumping = true
+        jumpStartTime = Date()
+        // 初始向上速度 (較小的小跳速度)
+        dinoVelocityY = GameConstants.jumpVelocity * 0.7
         isOnGround = false
-        isDucking = false
+    }
+
+    private func endJump() {
+        isJumping = false
+        jumpStartTime = nil
+    }
+
+    private func updateDinoPhysics(dt: CGFloat) {
+        if !isOnGround {
+            // 如果玩家還在按著螢幕，且跳躍時間未超過 0.25 秒，持續增加向上衝力
+            if isJumping, let startTime = jumpStartTime {
+                let duration = Date().timeIntervalSince(startTime)
+                if duration < 0.25 {
+                    dinoVelocityY += 800 * dt // 額外的上升推力
+                } else {
+                    isJumping = false
+                }
+            }
+            
+            dinoVelocityY += GameConstants.gravity * dt
+            dinoYOffset += dinoVelocityY * dt
+            if dinoYOffset <= 0 {
+                dinoYOffset = 0
+                dinoVelocityY = 0
+                isOnGround = true
+                isJumping = false
+            }
+        }
     }
 
     func duck(active: Bool) {
