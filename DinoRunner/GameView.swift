@@ -42,17 +42,7 @@ struct GameView: View {
                     .frame(width: 80, height: 80)
                     .position(x: 60, y: 160)
                 
-                // 測試按鈕 (點擊增加 1,000 分)
-                if vm.gameState == .running {
-                    Button(action: { vm.score += 1000 }) {
-                        Text("DEBUG: +1000")
-                            .font(.system(size: 10, weight: .bold, design: .monospaced))
-                            .padding(6)
-                            .background(Color.red.opacity(0.3))
-                            .cornerRadius(4)
-                    }
-                    .position(x: 60, y: 120)
-                }
+
 
                 // Clouds
                 ForEach(vm.clouds) { cloud in
@@ -104,7 +94,7 @@ struct GameView: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: vm.isDucking ? 64 : 50, height: vm.isDucking ? 30 : 54)
                     .shadow(color: vm.score >= 10000 ? .cyan : .clear, radius: 10) // 霓虹發光
-                    .position(x: vm.dinoScreenCenterX(), y: vm.dinoScreenCenterY())
+                    .position(x: vm.dinoScreenCenterX(), y: vm.dinoScreenCenterY() + 4) // 增加偏移量以貼合地面線條
 
                 // HUD
                 VStack {
@@ -179,6 +169,26 @@ struct GameView: View {
                                 Text("LEADERBOARD").font(.system(size: 14, weight: .bold, design: .monospaced)).foregroundColor(.white).padding(.horizontal, 15).padding(.vertical, 10).background(Color.orange).cornerRadius(8)
                             }
                         }
+                    }
+                }
+                
+                // 測試按鈕 (置於最頂層，確保可點擊)
+                if vm.gameState == .running {
+                    VStack {
+                        HStack {
+                            Button(action: { vm.score += 1000 }) {
+                                Text("DEBUG: +1000")
+                                    .font(.system(size: 12, weight: .bold, design: .monospaced))
+                                    .foregroundColor(.white)
+                                    .padding(10)
+                                    .background(Color.red.opacity(0.8))
+                                    .cornerRadius(8)
+                            }
+                            Spacer()
+                        }
+                        .padding(.leading, 20)
+                        .padding(.top, 120) // 避開太陽
+                        Spacer()
                     }
                 }
             }
